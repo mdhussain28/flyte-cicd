@@ -29,10 +29,10 @@ jobs:
 
       - name: Copy workflow files
         run: |
-          sudo mkdir -p /flyte-workspace
-          cp workflow.py /flyte-workspace/workflow.py
-          cp pyproject.toml /flyte-workspace/pyproject.toml
-          chmod -R 777 /flyte-workspace
+          mkdir -p $GITHUB_WORKSPACE/flyte-workspace
+          cp workflow.py $GITHUB_WORKSPACE/flyte-workspace/workflow.py
+          cp pyproject.toml $GITHUB_WORKSPACE/flyte-workspace/pyproject.toml
+          chmod -R 777 $GITHUB_WORKSPACE/flyte-workspace
 
       - name: Install flytekit
         run: |
