@@ -29,7 +29,7 @@ jobs:
 
       - name: Copy workflow files
         run: |
-          mkdir -p /flyte-workspace
+          sudo mkdir -p /flyte-workspace
           cp workflow.py /flyte-workspace/workflow.py
           cp pyproject.toml /flyte-workspace/pyproject.toml
           chmod -R 777 /flyte-workspace
