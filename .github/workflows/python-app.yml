@@ -41,6 +41,18 @@ jobs:
           uv tool install flytekit
           flytectl version
 
+      - name: configuring flytekit
+        run: |
+          cat > .flyte/config.yaml << EOF
+          admin:
+            endpoint: dns:///192.168.100.11:31705
+            authType: Pkce
+            insecure: true
+          console:
+            endpoint: http://192.168.100.11:30316
+          EOF
+          pyflyte info
+
       - name: Activate the venv
         run: |
           uv sync
